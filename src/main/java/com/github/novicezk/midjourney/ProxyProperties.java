@@ -91,7 +91,7 @@ public class ProxyProperties {
 		/**
 		 * 超时时间.
 		 */
-		private Duration timeout = Duration.ofSeconds(30);
+		private Duration timeout = Duration.ofSeconds(480);
 		/**
 		 * 使用的模型.
 		 */
@@ -111,7 +111,7 @@ public class ProxyProperties {
 		/**
 		 * timeout of task: default 30 days
 		 */
-		private Duration timeout = Duration.ofDays(30);
+		private Duration timeout = Duration.ofDays(480);
 		/**
 		 * default: TaskStore.IN_MEMORY
 		 * type: TaskStore.REDIS for Redis TaskStore

@@ -6,15 +6,30 @@ logging:
   level:
     ROOT: info
     com.github.novicezk.midjourney: debug
+redis:
+  host: 54.67.79.231
+  port: 6379
+  database: 1
+  timeout: 5000ms
+  lettuce:
+    pool:
+      # 连接池最大连接数
+      max-active: 200
+      # 连接池最大阻塞等待时间（使用负值表示没有限制）
+      max-wait: -1ms
+      # 连接池中的最大空闲连接
+      max-idle: 10
+      # 连接池中的最小空闲连接
+      min-idle: 0
 mj:
   discord:
-    guild-id: xxx
-    channel-id: xxx
-    user-token: xxx
-    bot-token: xxx
+    guild-id: 1106511482058973186
+    channel-id: 1106511482893631510
+    user-token: MTAxNDA1NDUyOTMwNzc3MDg4MA.GCJ54d.ldeGjnFFQ4KRo-LCAs4gbpySYylCfNq8hL2MEw
+    bot-token: MTEwNjUxNDIyNzk1MjM3MzgyOA.GGw3zg.uM_ZA9fl-JUiF1FePilUnXuYsHM5-9goM9Cuj0
   task-store:
-    type: in_memory
-    timeout: 30d
+    type: REDIS
+    timeout: 480d
   translate-way: null
   queue:
     timeout-minutes: 2

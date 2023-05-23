@@ -1,5 +1,6 @@
 package com.github.novicezk.midjourney.service.store;
 
+import com.alibaba.fastjson.JSONObject;
 import com.github.novicezk.midjourney.service.TaskStoreService;
 import com.github.novicezk.midjourney.support.Task;
 import org.springframework.data.redis.core.Cursor;
@@ -28,6 +29,9 @@ public class RedisTaskStoreServiceImpl implements TaskStoreService {
 
 	@Override
 	public void saveTask(Task task) {
+		System.out.println("超时时间："+timeout);
+		System.out.println("传过来的id："+task.getId());
+		System.out.println("传过来的task对象："+ JSONObject.toJSONString(task));
 		this.redisTemplate.opsForValue().set(getRedisKey(task.getId()), task, this.timeout);
 	}
 
